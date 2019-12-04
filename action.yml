@@ -1,0 +1,18 @@
+name: 'Get XML Info'
+author: 'mavrosxristoforos'
+description: 'Get Information from XML files to use into your GitHub workflows'
+branding:
+  icon: 'info'  
+  color: 'green'
+inputs:
+  xml-file:
+    description: 'The xml file from which to retrieve information.'
+    required: true
+    default: 'test.xml'
+  xpath:
+    description: 'The XPath of an element, to fetch its contents as output.'
+    required: true
+    default: '//element'
+runs:
+  using: 'node12'
+  main: 'index.js'

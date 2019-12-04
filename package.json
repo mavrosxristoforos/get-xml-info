@@ -1,0 +1,24 @@
+{
+  "name": "get-xml-info",
+  "version": "1.0.0",
+  "description": "Get Information from XML files to use into your GitHub workflows",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavrosxristoforos/get-xml-info.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mavrosxristoforos/get-xml-info/issues"
+  },
+  "homepage": "https://github.com/mavrosxristoforos/get-xml-info#readme"
+}
