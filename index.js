@@ -31,6 +31,7 @@ try {
           output.push(nodes[i].firstChild.data);
         }
         core.setOutput('info', output);
+        console.log(`Output: ${output}`);
       }
       else {
         core.setFailed('Your xpath did not return any nodes.');
