@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="3.0" method="upgrade">
+  <packagename>test_joomla_package</packagename>
+  <name>Test Joomla Package</name>
+  <creationDate>December 4, 2019</creationDate>
+  <author>Christopher Mavros</author>
+  <authorEmail>mavrosxristoforos@gmail.com</authorEmail>
+  <authorUrl>mavrosxristoforos.com</authorUrl>
+  <copyright>All Rights Reserved (C) Mavrosxristoforos.com</copyright>
+  <license>GPLv3</license>
+  <version>1.0.20</version>
+  <description>Test Description</description>
+  <files>
+    <file type="component" id="com_example">com_example.zip</file>
+    <file type="module" id="mod_example">mod_example.zip</file>
+  </files>
+  <params/>
+  <config/>
+</extension>

@@ -10,7 +10,7 @@ inputs:
     required: true
     default: 'test.xml'
   xpath:
-    description: 'The XPath of an element, to fetch its contents as output.'
+    description: 'The XPath of a node, to fetch its contents as output.'
     required: true
     default: '//element'
 runs:
