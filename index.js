@@ -7,6 +7,7 @@ try {
   var argv = require('minimist')(process.argv.slice(2));
   var xmlFile = (typeof argv.f !== 'undefined') ? argv.f : process.env.GITHUB_WORKSPACE+'/'+core.getInput('xml-file', { required: true });
   var xpathToSearch = (typeof argv.p !== 'undefined') ? argv.p : core.getInput('xpath', { required: true });
+  var debug = (typeof argv.d !== 'undefined') ? true : false;
 
   console.log(`File to read: ${xmlFile}`);
   console.log(`XPath: ${xpathToSearch}`);
@@ -21,7 +22,16 @@ try {
       console.log('File was read successfully. Proceeding to parse DOM.');
       
       var doc = new dom().parseFromString(data);
+      if (debug) {
+        console.log('Debug output: Document.');
+        console.log(doc);
+      }
+
       var nodes = xpath.select(xpathToSearch, doc);
+      if (debug) {
+        console.log('Debug output: Nodes.');
+        console.log(nodes);
+      }
 
       console.log(`Found ${nodes.length} nodes.`);
 
