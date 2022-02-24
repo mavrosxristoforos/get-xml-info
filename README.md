@@ -21,6 +21,16 @@
 ## Console usage
 
     node index.js -f path/to/xmlfile -p //element
+    
+You can also add -d for debug output.
+
+    node index.js -f path/to/file.xml -p //element -d
+    
+## Namespaces
+
+Namespaces are currently not supported, so you can use the `local-name()` XPath function instead. Example: 
+
+    //*[local-name()='project']/*[local-name()='version']
 
 ## Outputs
 
