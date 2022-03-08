@@ -25,7 +25,13 @@
 You can also add -d for debug output.
 
     node index.js -f path/to/file.xml -p //element -d
-    
+
+## Attributes
+
+Since version 1.1.0, you can now also read attributes. Example:
+
+    //element/@version
+
 ## Namespaces
 
 Namespaces are currently not supported, so you can use the `local-name()` XPath function instead. Example: 
