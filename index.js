@@ -38,7 +38,13 @@ try {
       if (nodes.length) {
         var output = [];
         for (var i = 0; i < nodes.length; i++) {
-          output.push(nodes[i].firstChild.data);
+          var node = nodes[i];
+          var firstChild = node.firstChild;
+          if (firstChild) {
+            output.push(firstChild.data);
+          } else {
+            output.push(node.value);
+          }
         }
         core.setOutput('info', output);
         console.log(`Output: ${output}`);
