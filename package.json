@@ -1,6 +1,6 @@
 {
   "name": "get-xml-info",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Get Information from XML files to use into your GitHub workflows",
   "main": "index.js",
   "scripts": {
