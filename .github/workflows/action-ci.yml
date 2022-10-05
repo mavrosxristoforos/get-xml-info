@@ -1,0 +1,81 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: GH Actions CI
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - README.md
+
+  workflow_dispatch:
+jobs:
+  nodejs-build:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 2
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3.1.0
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+##    - run: npm test        //Testing GH Actions
+  action-test:
+    runs-on: ubuntu-latest
+    needs: [ nodejs-build ]
+    strategy:
+      max-parallel: 2
+      matrix:
+        include:
+          - subject: Plain body (attachment)
+            attachments: action.yml
+            body: |
+              first line
+              second line
+          - subject: HTML body (attachments)
+            attachments: package.json,package-lock.json
+            html_body: |
+              <!DOCTYPE html>
+              <html>
+              <body>
+              <h1>Heading</h1>
+              <p>Paragraph</p>
+              </body>
+              </html>
+          - subject: Plain body (Markdown)
+            convert_markdown: true
+            body: file://README.md
+          - subject: HTML body (Markdown)
+            convert_markdown: true
+            html_body: file://README.md
+          - subject: Multipart body (Markdown)
+            convert_markdown: true
+            body: file://README.md
+            html_body: file://README.md
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Send mail
+        uses: ./
+        with:
+          server_address: ${{secrets.ADDRESS}}
+          server_port: 587
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          subject: ${{matrix.subject}}
+          body: ${{matrix.body}}
+          html_body: ${{matrix.html_body}}
+          to: ${{secrets.USERNAME}}
+          from: github-actions
+          attachments: ${{matrix.attachments}}
+          convert_markdown: ${{matrix.convert_markdown}}
+          priority: high
