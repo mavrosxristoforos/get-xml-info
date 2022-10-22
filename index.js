@@ -46,7 +46,7 @@ try {
             output.push(node.value);
           }
         }
-        core.setOutput('info', output);
+        core.setOutput('info', String(output));
         console.log(`Output: ${output}`);
       }
       else {
