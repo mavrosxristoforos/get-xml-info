@@ -14,5 +14,5 @@ inputs:
     required: true
     default: '//element'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
