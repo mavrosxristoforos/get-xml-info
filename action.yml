@@ -13,6 +13,10 @@ inputs:
     description: 'The XPath of a node, to fetch its contents as output.'
     required: true
     default: '//element'
+  allow-zero-nodes:
+    description: 'Allow zero nodes to not fail'
+    required: false
+    default: false
 runs:
   using: 'node16'
   main: 'index.js'

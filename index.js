@@ -8,6 +8,7 @@ try {
   var xmlFile = (typeof argv.f !== 'undefined') ? argv.f : process.env.GITHUB_WORKSPACE+'/'+core.getInput('xml-file', { required: true });
   var xpathToSearch = (typeof argv.p !== 'undefined') ? argv.p : core.getInput('xpath', { required: true });
   var debug = (typeof argv.d !== 'undefined') ? true : false;
+  var allowZeroNodes = (typeof argv.z !== 'undefined') ? true : core.getInput('allow-zero-nodes', {required: false}) || false
 
   console.log(`File to read: ${xmlFile}`);
   console.log(`XPath: ${xpathToSearch}`);
@@ -35,7 +36,7 @@ try {
 
       console.log(`Found ${nodes.length} nodes.`);
 
-      if (nodes.length) {
+      if (allowZeroNodes || nodes.length) {
         var output = [];
         for (var i = 0; i < nodes.length; i++) {
           var node = nodes[i];
@@ -50,6 +51,7 @@ try {
         console.log(`Output: ${output}`);
       }
       else {
+        console.error('Your xpath did not return any nodes.')
         core.setFailed('Your xpath did not return any nodes.');
       }
     }

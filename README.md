@@ -11,6 +11,10 @@
 
 **Required** The xpath of the nodes from which you want to retrieve information. Default `"//element"`.
 
+### `allow-zero-nodes`
+
+**Optional** Finding zero nodes is not an error. Default `false`.
+
 ## Example usage
 
     uses: mavrosxristoforos/get-xml-info@1.0
