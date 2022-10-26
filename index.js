@@ -8,11 +8,13 @@ try {
   var xmlFile = (typeof argv.f !== 'undefined') ? argv.f : process.env.GITHUB_WORKSPACE+'/'+core.getInput('xml-file', { required: true });
   var xpathToSearch = (typeof argv.p !== 'undefined') ? argv.p : core.getInput('xpath', { required: true });
   var debug = (typeof argv.d !== 'undefined') ? true : false;
-  var allowZeroNodes = (typeof argv.z !== 'undefined') ? true : core.getInput('allow-zero-nodes', {required: false}) || false
+  var allowZeroNodes = (typeof argv.z !== 'undefined') ? true : (core.getInput('allow-zero-nodes', {required: false}) || false)
 
   console.log(`File to read: ${xmlFile}`);
   console.log(`XPath: ${xpathToSearch}`);
-
+  if (allowZeroNodes) {
+    console.log('Zero Nodes Allowed')
+  }
   var xpath = require('xpath'), dom = require('xmldom').DOMParser
  
   fs.readFile(xmlFile, 'utf8', function read(err, data) {
