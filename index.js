@@ -8,13 +8,12 @@ try {
   var xmlFile = (typeof argv.f !== 'undefined') ? argv.f : process.env.GITHUB_WORKSPACE+'/'+core.getInput('xml-file', { required: true });
   var xpathToSearch = (typeof argv.p !== 'undefined') ? argv.p : core.getInput('xpath', { required: true });
   var debug = (typeof argv.d !== 'undefined') ? true : false;
-  var allowZeroNodes = (typeof argv.z !== 'undefined') ? true : (core.getInput('allow-zero-nodes', {required: false}) || false)
+  var zeroNodesAction = (typeof argv.z !== 'undefined') ? argv.z : (core.getInput('zero-nodes-action', {required: false}) || 'error')
 
   console.log(`File to read: ${xmlFile}`);
   console.log(`XPath: ${xpathToSearch}`);
-  if (allowZeroNodes) {
-    console.log('Zero Nodes Allowed')
-  }
+  console.log(`Zero Nodes Action: ${zeroNodesAction}`)
+
   var xpath = require('xpath'), dom = require('xmldom').DOMParser
  
   fs.readFile(xmlFile, 'utf8', function read(err, data) {
@@ -38,7 +37,7 @@ try {
 
       console.log(`Found ${nodes.length} nodes.`);
 
-      if (allowZeroNodes || nodes.length) {
+      if (['silent','warn'].includes(zeroNodesAction) || nodes.length) {
         var output = [];
         for (var i = 0; i < nodes.length; i++) {
           var node = nodes[i];
@@ -49,10 +48,15 @@ try {
             output.push(node.value);
           }
         }
-        core.setOutput('info', String(output));
-        console.log(`Output: ${output}`);
-      }
-      else {
+        if ('warn' === zeroNodesAction && 0 === nodes.length) {
+          console.warn("Zero Nodes Found");
+          core.setOutput('info', "Zero Nodes Found.");
+        } else {
+          core.setOutput('info', String(output));
+          console.log(`Output: ${output}`);
+        }
+
+      } else {
         console.error('Your xpath did not return any nodes.')
         core.setFailed('Your xpath did not return any nodes.');
       }
