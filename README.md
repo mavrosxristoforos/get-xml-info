@@ -11,6 +11,10 @@
 
 **Required** The xpath of the nodes from which you want to retrieve information. Default `"//element"`.
 
+### `zero-nodes-action`
+
+**Optional** How to handle finding Zero (0) nodes. Default `error`.
+
 ## Example usage
 
     uses: mavrosxristoforos/get-xml-info@1.0
@@ -43,6 +47,8 @@ Namespaces are currently not supported, so you can use the `local-name()` XPath 
 ### `info`
 
 The content of the matched nodes. If your XPath matches more than one nodes, the output is an array.
+
+If `zero-nodes-action='warn'` and no nodes are found, `info` will contain the message "Zero Nodes Found."
 
 ## Example usage of output in a workflow
 
