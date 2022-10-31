@@ -30,6 +30,11 @@ You can also add -d for debug output.
 
     node index.js -f path/to/file.xml -p //element -d
 
+To leverage the zero-nodes-action functionality, use the -z argument:
+
+    node index.js -f file.xml -p //version -z warn
+    node index.js -f file.xml -p //version -z silent
+
 ## Attributes
 
 Since version 1.1.0, you can now also read attributes. Example:
