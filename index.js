@@ -10,12 +10,18 @@ try {
   var debug = (typeof argv.d !== 'undefined') ? true : false;
   var zeroNodesAction = (typeof argv.z !== 'undefined') ? argv.z : (core.getInput('zero-nodes-action', {required: false}) || 'error')
 
+  var namespaces = (typeof argv.n !== 'undefined') ? argv.n : (core.getInput('namespaces', {required: false}) || null)
+
   console.log(`File to read: ${xmlFile}`);
   console.log(`XPath: ${xpathToSearch}`);
   console.log(`Zero Nodes Action: ${zeroNodesAction}`)
 
+  console.log(`Namespaces: ${namespaces}`)
+
   var xpath = require('xpath'), dom = require('xmldom').DOMParser
  
+  
+
   fs.readFile(xmlFile, 'utf8', function read(err, data) {
     if (err) {
       core.setFailed(err.message);
@@ -29,7 +35,11 @@ try {
         console.log(doc);
       }
 
-      var nodes = xpath.select(xpathToSearch, doc);
+      selector = xpath.select
+      if (namespaces)
+        selector=selector=xpath.useNamespaces(JSON.parse(namespaces));
+
+      var nodes = selector(xpathToSearch, doc);
       if (debug) {
         console.log('Debug output: Nodes.');
         console.log(nodes);
