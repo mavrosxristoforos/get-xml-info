@@ -79,3 +79,7 @@ If `zero-nodes-action='warn'` and no nodes are found, `info` will contain the me
           with:
             artifacts: 'another-file.zip'
             tag: ${{ steps.getxml.outputs.info }}
+
+## How to build it
+- Install `vercel/ncc` by running this command in your terminal: `npm i -g @vercel/ncc`
+- Compile your index.js file: `ncc build index.js --license licenses.txt`
