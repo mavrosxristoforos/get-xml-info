@@ -81,5 +81,6 @@ If `zero-nodes-action='warn'` and no nodes are found, `info` will contain the me
             tag: ${{ steps.getxml.outputs.info }}
 
 ## How to build it
+- Run `npm install` to install all dependencies
 - Install `vercel/ncc` by running this command in your terminal: `npm i -g @vercel/ncc`
 - Compile your index.js file: `ncc build index.js --license licenses.txt`
