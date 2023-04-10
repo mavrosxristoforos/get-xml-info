@@ -17,6 +17,10 @@ inputs:
     description: 'Allow zero nodes to not fail'
     required: false
     default: 'error'
+  namespaces:
+    description: 'namespaces to use'
+    required: false
+    default: ''
 runs:
   using: 'node16'
   main: 'index.js'

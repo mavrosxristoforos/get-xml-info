@@ -15,12 +15,17 @@
 
 **Optional** How to handle finding Zero (0) nodes. Default `error`.
 
+### namespaces
+
+**Optional** `JSON` object with namespaces in it
+
 ## Example usage
 
     uses: mavrosxristoforos/get-xml-info@1.0
       with:
         xml-file: 'yourfile.xml'
         xpath: '//element'
+        namespaces: '{"x": "http://maven.apache.org/POM/4.0.0"}'
 
 ## Console usage
 
