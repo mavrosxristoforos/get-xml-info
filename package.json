@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "minimist": "^1.2.7",
