@@ -29,16 +29,18 @@
 
 ## Console usage
 
-    node index.js -f path/to/xmlfile -p //element
+    node dist/index.js -f path/to/xmlfile -p //element
     
 You can also add -d for debug output.
 
-    node index.js -f path/to/file.xml -p //element -d
+    node dist/index.js -f path/to/file.xml -p //element -d
 
 To leverage the zero-nodes-action functionality, use the -z argument:
 
-    node index.js -f file.xml -p //version -z warn
-    node index.js -f file.xml -p //version -z silent
+    node dist/index.js -f file.xml -p //version -z warn
+    node dist/index.js -f file.xml -p //version -z silent
+
+Alternatively, if you are developing the code, you can run `npm install`, and run the non-compiled `index.js` version in the root directory.
 
 ## Attributes
 
