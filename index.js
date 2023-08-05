@@ -18,7 +18,7 @@ try {
 
   console.log(`Namespaces: ${namespaces}`)
 
-  var xpath = require('xpath'), dom = require('xmldom').DOMParser
+  var xpath = require('xpath'), dom = require('@xmldom/xmldom').DOMParser
  
   
 

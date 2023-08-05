@@ -29,16 +29,18 @@
 
 ## Console usage
 
-    node index.js -f path/to/xmlfile -p //element
+    node dist/index.js -f path/to/xmlfile -p //element
     
 You can also add -d for debug output.
 
-    node index.js -f path/to/file.xml -p //element -d
+    node dist/index.js -f path/to/file.xml -p //element -d
 
 To leverage the zero-nodes-action functionality, use the -z argument:
 
-    node index.js -f file.xml -p //version -z warn
-    node index.js -f file.xml -p //version -z silent
+    node dist/index.js -f file.xml -p //version -z warn
+    node dist/index.js -f file.xml -p //version -z silent
+
+Alternatively, if you are developing the code, you can run `npm install`, and run the non-compiled `index.js` version in the root directory.
 
 ## Attributes
 
@@ -79,3 +81,8 @@ If `zero-nodes-action='warn'` and no nodes are found, `info` will contain the me
           with:
             artifacts: 'another-file.zip'
             tag: ${{ steps.getxml.outputs.info }}
+
+## How to build it
+- Run `npm install` to install all dependencies
+- Install `vercel/ncc` by running this command in your terminal: `npm i -g @vercel/ncc`
+- Compile your index.js file: `ncc build index.js --license licenses.txt`
