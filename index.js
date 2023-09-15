@@ -47,7 +47,11 @@ try {
 
       console.log(`Found ${nodes.length} nodes.`);
 
-      if (['silent','warn'].includes(zeroNodesAction) || nodes.length) {
+      if (typeof(nodes) == 'string')
+	  {
+		  core.setOutput('info', nodes)
+	  }
+      else if (['silent','warn'].includes(zeroNodesAction) || nodes.length) {
         var output = [];
         for (var i = 0; i < nodes.length; i++) {
           var node = nodes[i];
