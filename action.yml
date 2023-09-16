@@ -1,5 +1,4 @@
-name: 'Get XML Info'
-author: 'mavrosxristoforos'
+name: 'Get XPath'
 description: 'Get Information from XML files to use into your GitHub workflows'
 branding:
   icon: 'info'  
