@@ -3,7 +3,7 @@ const fs = require('fs');
 
 try {
   console.log('Welcome to Get-XML-Version.')
-    
+
   var argv = require('minimist')(process.argv.slice(2));
   var xmlFile = (typeof argv.f !== 'undefined') ? argv.f : process.env.GITHUB_WORKSPACE+'/'+core.getInput('xml-file', { required: true });
   var xpathToSearch = (typeof argv.p !== 'undefined') ? argv.p : core.getInput('xpath', { required: true });
@@ -19,8 +19,8 @@ try {
   console.log(`Namespaces: ${namespaces}`)
 
   var xpath = require('xpath'), dom = require('@xmldom/xmldom').DOMParser
- 
-  
+
+
 
   fs.readFile(xmlFile, 'utf8', function read(err, data) {
     if (err) {
@@ -28,7 +28,7 @@ try {
     }
     else {
       console.log('File was read successfully. Proceeding to parse DOM.');
-      
+
       var doc = new dom().parseFromString(data);
       if (debug) {
         console.log('Debug output: Document.');
@@ -47,7 +47,12 @@ try {
 
       console.log(`Found ${nodes.length} nodes.`);
 
-      if (['silent','warn'].includes(zeroNodesAction) || nodes.length) {
+      if (typeof(nodes) == 'string')
+	  {
+		  core.setOutput('info', nodes)
+      console.log(`Output: ${nodes}`);
+	  }
+      else if (['silent','warn'].includes(zeroNodesAction) || nodes.length) {
         var output = [];
         for (var i = 0; i < nodes.length; i++) {
           var node = nodes[i];
