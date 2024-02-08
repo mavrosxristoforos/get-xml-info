@@ -1,8 +1,11 @@
 version: 2
 updates:
-  # Enable version updates for npm
   - package-ecosystem: "npm"
     directory: "/"
-    # Check the npm registry for updates every week
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
       interval: "weekly"
