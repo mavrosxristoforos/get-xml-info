@@ -9,9 +9,12 @@ on:
       - "**.md"
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build:
-    name: Lint/Build/Test
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -19,11 +22,24 @@ jobs:
         node: ["20"]
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Node.js ${{ matrix.node }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
           cache: 'npm'
-      - run: npm install
-      - run: npm i -g @vercel/ncc
-      - run: ncc build index.js --license licenses.txt
+
+      - name: Install dependencies with NPM
+        run: |
+          npm i -g @vercel/ncc
+          npm install
+
+      - name: Build new release
+        run: ncc build index.js --license licenses.txt
+
+      - name: Open pull request with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: New build
+          branch: auto-build
+          delete-branch: true
