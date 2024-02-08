@@ -24,8 +24,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm i -g npm@latest
+      - run: npm i -g @vercel/ncc
       - run: npm install
-      - run: npm run build
+      - run: npm ncc build index.js --license licenses.txt
       - run: npm test
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
