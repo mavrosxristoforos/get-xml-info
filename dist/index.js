@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 152:
+/***/ 40:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -28,7 +28,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
 const os = __importStar(__nccwpck_require__(37));
-const utils_1 = __nccwpck_require__(455);
+const utils_1 = __nccwpck_require__(915);
 /**
  * Commands
  *
@@ -100,7 +100,7 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 798:
+/***/ 799:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -135,12 +135,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
-const command_1 = __nccwpck_require__(152);
-const file_command_1 = __nccwpck_require__(433);
-const utils_1 = __nccwpck_require__(455);
+const command_1 = __nccwpck_require__(40);
+const file_command_1 = __nccwpck_require__(663);
+const utils_1 = __nccwpck_require__(915);
 const os = __importStar(__nccwpck_require__(37));
 const path = __importStar(__nccwpck_require__(17));
-const oidc_utils_1 = __nccwpck_require__(1);
+const oidc_utils_1 = __nccwpck_require__(78);
 /**
  * The code to exit an action
  */
@@ -425,17 +425,17 @@ exports.getIDToken = getIDToken;
 /**
  * Summary exports
  */
-var summary_1 = __nccwpck_require__(142);
+var summary_1 = __nccwpck_require__(684);
 Object.defineProperty(exports, "summary", ({ enumerable: true, get: function () { return summary_1.summary; } }));
 /**
  * @deprecated use core.summary
  */
-var summary_2 = __nccwpck_require__(142);
+var summary_2 = __nccwpck_require__(684);
 Object.defineProperty(exports, "markdownSummary", ({ enumerable: true, get: function () { return summary_2.markdownSummary; } }));
 /**
  * Path exports
  */
-var path_utils_1 = __nccwpck_require__(695);
+var path_utils_1 = __nccwpck_require__(568);
 Object.defineProperty(exports, "toPosixPath", ({ enumerable: true, get: function () { return path_utils_1.toPosixPath; } }));
 Object.defineProperty(exports, "toWin32Path", ({ enumerable: true, get: function () { return path_utils_1.toWin32Path; } }));
 Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: function () { return path_utils_1.toPlatformPath; } }));
@@ -443,7 +443,7 @@ Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: funct
 
 /***/ }),
 
-/***/ 433:
+/***/ 663:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -474,8 +474,8 @@ exports.prepareKeyValueMessage = exports.issueFileCommand = void 0;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const fs = __importStar(__nccwpck_require__(147));
 const os = __importStar(__nccwpck_require__(37));
-const uuid_1 = __nccwpck_require__(30);
-const utils_1 = __nccwpck_require__(455);
+const uuid_1 = __nccwpck_require__(238);
+const utils_1 = __nccwpck_require__(915);
 function issueFileCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -508,7 +508,7 @@ exports.prepareKeyValueMessage = prepareKeyValueMessage;
 
 /***/ }),
 
-/***/ 1:
+/***/ 78:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -524,9 +524,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(311);
-const auth_1 = __nccwpck_require__(904);
-const core_1 = __nccwpck_require__(798);
+const http_client_1 = __nccwpck_require__(421);
+const auth_1 = __nccwpck_require__(311);
+const core_1 = __nccwpck_require__(799);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
         const requestOptions = {
@@ -592,7 +592,7 @@ exports.OidcClient = OidcClient;
 
 /***/ }),
 
-/***/ 695:
+/***/ 568:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -657,7 +657,7 @@ exports.toPlatformPath = toPlatformPath;
 
 /***/ }),
 
-/***/ 142:
+/***/ 684:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -947,7 +947,7 @@ exports.summary = _summary;
 
 /***/ }),
 
-/***/ 455:
+/***/ 915:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -994,7 +994,7 @@ exports.toCommandProperties = toCommandProperties;
 
 /***/ }),
 
-/***/ 904:
+/***/ 311:
 /***/ (function(__unused_webpack_module, exports) {
 
 "use strict";
@@ -1082,7 +1082,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 
 /***/ }),
 
-/***/ 311:
+/***/ 421:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1120,8 +1120,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HttpClient = exports.isHttps = exports.HttpClientResponse = exports.HttpClientError = exports.getProxyUrl = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
 const http = __importStar(__nccwpck_require__(685));
 const https = __importStar(__nccwpck_require__(687));
-const pm = __importStar(__nccwpck_require__(896));
-const tunnel = __importStar(__nccwpck_require__(994));
+const pm = __importStar(__nccwpck_require__(255));
+const tunnel = __importStar(__nccwpck_require__(626));
 var HttpCodes;
 (function (HttpCodes) {
     HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -1694,7 +1694,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 
 /***/ }),
 
-/***/ 896:
+/***/ 255:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -1777,7 +1777,7 @@ function isLoopbackAddress(host) {
 
 /***/ }),
 
-/***/ 231:
+/***/ 591:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -1988,14 +1988,14 @@ exports.NAMESPACE = NAMESPACE;
 
 /***/ }),
 
-/***/ 647:
+/***/ 731:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 var __webpack_unused_export__;
-var conventions = __nccwpck_require__(231);
-var dom = __nccwpck_require__(73)
-var entities = __nccwpck_require__(465);
-var sax = __nccwpck_require__(743);
+var conventions = __nccwpck_require__(591);
+var dom = __nccwpck_require__(213)
+var entities = __nccwpck_require__(435);
+var sax = __nccwpck_require__(857);
 
 var DOMImplementation = dom.DOMImplementation;
 
@@ -2318,10 +2318,10 @@ exports.DOMParser = DOMParser;
 
 /***/ }),
 
-/***/ 73:
+/***/ 213:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-var conventions = __nccwpck_require__(231);
+var conventions = __nccwpck_require__(591);
 
 var find = conventions.find;
 var NAMESPACE = conventions.NAMESPACE;
@@ -4165,13 +4165,13 @@ try{
 
 /***/ }),
 
-/***/ 465:
+/***/ 435:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-var freeze = (__nccwpck_require__(231).freeze);
+var freeze = (__nccwpck_require__(591).freeze);
 
 /**
  * The entities that are predefined in every XML document.
@@ -6339,22 +6339,22 @@ exports.entityMap = exports.HTML_ENTITIES;
 
 /***/ }),
 
-/***/ 419:
+/***/ 909:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 var __webpack_unused_export__;
-var dom = __nccwpck_require__(73)
+var dom = __nccwpck_require__(213)
 __webpack_unused_export__ = dom.DOMImplementation
 __webpack_unused_export__ = dom.XMLSerializer
-exports.DOMParser = __nccwpck_require__(647).DOMParser
+exports.DOMParser = __nccwpck_require__(731).DOMParser
 
 
 /***/ }),
 
-/***/ 743:
+/***/ 857:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-var NAMESPACE = (__nccwpck_require__(231).NAMESPACE);
+var NAMESPACE = (__nccwpck_require__(591).NAMESPACE);
 
 //[4]   	NameStartChar	   ::=   	":" | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
 //[4a]   	NameChar	   ::=   	NameStartChar | "-" | "." | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040]
@@ -7020,7 +7020,7 @@ exports.ParseError = ParseError;
 
 /***/ }),
 
-/***/ 144:
+/***/ 637:
 /***/ ((module) => {
 
 "use strict";
@@ -7291,15 +7291,15 @@ module.exports = function (args, opts) {
 
 /***/ }),
 
-/***/ 994:
+/***/ 626:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(55);
+module.exports = __nccwpck_require__(645);
 
 
 /***/ }),
 
-/***/ 55:
+/***/ 645:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7571,7 +7571,7 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 30:
+/***/ 238:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7635,29 +7635,29 @@ Object.defineProperty(exports, "parse", ({
   }
 }));
 
-var _v = _interopRequireDefault(__nccwpck_require__(901));
+var _v = _interopRequireDefault(__nccwpck_require__(722));
 
-var _v2 = _interopRequireDefault(__nccwpck_require__(216));
+var _v2 = _interopRequireDefault(__nccwpck_require__(735));
 
-var _v3 = _interopRequireDefault(__nccwpck_require__(905));
+var _v3 = _interopRequireDefault(__nccwpck_require__(950));
 
-var _v4 = _interopRequireDefault(__nccwpck_require__(197));
+var _v4 = _interopRequireDefault(__nccwpck_require__(419));
 
-var _nil = _interopRequireDefault(__nccwpck_require__(829));
+var _nil = _interopRequireDefault(__nccwpck_require__(319));
 
-var _version = _interopRequireDefault(__nccwpck_require__(23));
+var _version = _interopRequireDefault(__nccwpck_require__(499));
 
-var _validate = _interopRequireDefault(__nccwpck_require__(965));
+var _validate = _interopRequireDefault(__nccwpck_require__(126));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(549));
+var _stringify = _interopRequireDefault(__nccwpck_require__(726));
 
-var _parse = _interopRequireDefault(__nccwpck_require__(484));
+var _parse = _interopRequireDefault(__nccwpck_require__(182));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
 
-/***/ 267:
+/***/ 422:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7687,7 +7687,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 829:
+/***/ 319:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -7702,7 +7702,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 484:
+/***/ 182:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7713,7 +7713,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(965));
+var _validate = _interopRequireDefault(__nccwpck_require__(126));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7754,7 +7754,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 442:
+/***/ 501:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -7769,7 +7769,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 456:
+/***/ 916:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7800,7 +7800,7 @@ function rng() {
 
 /***/ }),
 
-/***/ 529:
+/***/ 458:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7830,7 +7830,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 549:
+/***/ 726:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7841,7 +7841,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(965));
+var _validate = _interopRequireDefault(__nccwpck_require__(126));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7876,7 +7876,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 901:
+/***/ 722:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7887,9 +7887,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _rng = _interopRequireDefault(__nccwpck_require__(456));
+var _rng = _interopRequireDefault(__nccwpck_require__(916));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(549));
+var _stringify = _interopRequireDefault(__nccwpck_require__(726));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -7990,7 +7990,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 216:
+/***/ 735:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -8001,9 +8001,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _v = _interopRequireDefault(__nccwpck_require__(220));
+var _v = _interopRequireDefault(__nccwpck_require__(904));
 
-var _md = _interopRequireDefault(__nccwpck_require__(267));
+var _md = _interopRequireDefault(__nccwpck_require__(422));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8013,7 +8013,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 220:
+/***/ 904:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -8025,9 +8025,9 @@ Object.defineProperty(exports, "__esModule", ({
 exports["default"] = _default;
 exports.URL = exports.DNS = void 0;
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(549));
+var _stringify = _interopRequireDefault(__nccwpck_require__(726));
 
-var _parse = _interopRequireDefault(__nccwpck_require__(484));
+var _parse = _interopRequireDefault(__nccwpck_require__(182));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8098,7 +8098,7 @@ function _default(name, version, hashfunc) {
 
 /***/ }),
 
-/***/ 905:
+/***/ 950:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -8109,9 +8109,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _rng = _interopRequireDefault(__nccwpck_require__(456));
+var _rng = _interopRequireDefault(__nccwpck_require__(916));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(549));
+var _stringify = _interopRequireDefault(__nccwpck_require__(726));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8142,7 +8142,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 197:
+/***/ 419:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -8153,9 +8153,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _v = _interopRequireDefault(__nccwpck_require__(220));
+var _v = _interopRequireDefault(__nccwpck_require__(904));
 
-var _sha = _interopRequireDefault(__nccwpck_require__(529));
+var _sha = _interopRequireDefault(__nccwpck_require__(458));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8165,7 +8165,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 965:
+/***/ 126:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -8176,7 +8176,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _regex = _interopRequireDefault(__nccwpck_require__(442));
+var _regex = _interopRequireDefault(__nccwpck_require__(501));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8189,7 +8189,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 23:
+/***/ 499:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -8200,7 +8200,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(965));
+var _validate = _interopRequireDefault(__nccwpck_require__(126));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8217,7 +8217,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 392:
+/***/ 654:
 /***/ ((__unused_webpack_module, exports) => {
 
 /*
@@ -8323,6 +8323,28 @@ var xpath = ( false) ? 0 : exports;
 (function (exports) {
     "use strict";
 
+    // namespace nodes are not part of the DOM spec, so we use a custom nodetype for them.
+    // should NOT be used externally
+    var NAMESPACE_NODE_NODETYPE = '__namespace';
+
+    var isNil = function (x) {
+        return x === null || x === undefined;
+    };
+
+    var isValidNodeType = function (nodeType) {
+        return nodeType === NAMESPACE_NODE_NODETYPE ||
+            (Number.isInteger(nodeType)
+                && nodeType >= 1
+                && nodeType <= 11
+            );
+    };
+
+    var isNodeLike = function (value) {
+        return value
+            && isValidNodeType(value.nodeType)
+            && typeof value.nodeName === "string";
+    };
+
     // functional helpers
     function curry(func) {
         var slice = Array.prototype.slice,
@@ -8389,6 +8411,16 @@ var xpath = ( false) ? 0 : exports;
 
     var prototypeConcat = Array.prototype.concat;
 
+    var sortNodes = function (nodes, reverse) {
+        var ns = new XNodeSet();
+
+        ns.addArray(nodes);
+
+        var sorted = ns.toArray();
+
+        return reverse ? sorted.reverse() : sorted;
+    }
+
     // .apply() fails above a certain number of arguments - https://github.com/goto100/xpath/pull/98
     var MAX_ARGUMENT_LENGTH = 32767;
 
@@ -8397,10 +8429,10 @@ var xpath = ( false) ? 0 : exports;
 
         for (var start = 0; start < arr.length; start += MAX_ARGUMENT_LENGTH) {
             var chunk = arr.slice(start, start + MAX_ARGUMENT_LENGTH);
-            
+
             result = prototypeConcat.apply(result, chunk);
         }
-        
+
         return result;
     }
 
@@ -8433,6 +8465,7 @@ var xpath = ( false) ? 0 : exports;
         DOCUMENT_NODE: 9,
         DOCUMENT_TYPE_NODE: 10,
         DOCUMENT_FRAGMENT_NODE: 11,
+        NAMESPACE_NODE: NAMESPACE_NODE_NODETYPE,
     };
 
     // XPathParser ///////////////////////////////////////////////////////////////
@@ -9457,6 +9490,13 @@ var xpath = ( false) ? 0 : exports;
     XPathParser.ACCEPT = 'a';
 
     XPathParser.prototype.parse = function (s) {
+        if (!s) {
+            throw new Error('XPath expression unspecified.');
+        }
+        if (typeof s !== 'string'){
+            throw new Error('XPath expression must be a string.');
+        }
+
         var types;
         var values;
         var res = this.tokenize(s);
@@ -9535,6 +9575,12 @@ var xpath = ( false) ? 0 : exports;
     }
 
     XPath.prototype.evaluate = function (c) {
+        var node = c.expressionContextNode;
+
+        if (!(isNil(node) || isNodeLike(node))) {
+            throw new Error("Context node does not appear to be a valid DOM node.");
+        }
+
         c.contextNode = c.expressionContextNode;
         c.contextSize = 1;
         c.contextPosition = 1;
@@ -10005,7 +10051,7 @@ var xpath = ( false) ? 0 : exports;
         return node;
     }
 
-    PathExpr.applyPredicates = function (predicates, c, nodes) {
+    var applyPredicates = function (predicates, c, nodes, reverse) {
         if (predicates.length === 0) {
             return nodes;
         }
@@ -10026,7 +10072,7 @@ var xpath = ( false) ? 0 : exports;
                     inNodes
                 );
             },
-            nodes,
+            sortNodes(nodes, reverse),
             predicates
         );
     };
@@ -10034,12 +10080,18 @@ var xpath = ( false) ? 0 : exports;
     PathExpr.getRoot = function (xpc, nodes) {
         var firstNode = nodes[0];
 
-        if (firstNode.nodeType === NodeTypes.DOCUMENT_NODE) {
+        // xpc.virtualRoot could possibly provide a root even if firstNode is null,
+        // so using a guard here instead of throwing.
+        if (firstNode && firstNode.nodeType === NodeTypes.DOCUMENT_NODE) {
             return firstNode;
         }
 
         if (xpc.virtualRoot) {
             return xpc.virtualRoot;
+        }
+
+        if (!firstNode) {
+            throw new Error('Context node not found when determining document root.');
         }
 
         var ownerDoc = firstNode.ownerDocument;
@@ -10056,8 +10108,25 @@ var xpath = ( false) ? 0 : exports;
         return n;
     }
 
+    var getPrefixForNamespaceNode = function (attrNode) {
+        var nm = String(attrNode.name);
+
+        if (nm === "xmlns") {
+            return "";
+        }
+
+        if (nm.substring(0, 6) === "xmlns:") {
+            return nm.substring(6, nm.length);
+        }
+
+        return null;
+    };
+
     PathExpr.applyStep = function (step, xpc, node) {
-        var self = this;
+        if (!node) {
+            throw new Error('Context node not found when evaluating XPath step: ' + step);
+        }
+
         var newNodes = [];
         xpc.contextNode = node;
 
@@ -10198,30 +10267,30 @@ var xpath = ( false) ? 0 : exports;
                 break;
 
             case Step.NAMESPACE:
-                var n = {};
+                var nodes = {};
+
                 if (xpc.contextNode.nodeType == NodeTypes.ELEMENT_NODE) {
-                    n["xml"] = XPath.XML_NAMESPACE_URI;
-                    n["xmlns"] = XPath.XMLNS_NAMESPACE_URI;
+                    // BUG: This only collects the namespaces on the current node, but seemingly
+                    //      it should collect all those in scope
+                    nodes["xml"] = new XPathNamespace("xml", null, XPath.XML_NAMESPACE_URI, xpc.contextNode);
+
                     for (var m = xpc.contextNode; m != null && m.nodeType == NodeTypes.ELEMENT_NODE; m = m.parentNode) {
                         for (var k = 0; k < m.attributes.length; k++) {
                             var attr = m.attributes.item(k);
-                            var nm = String(attr.name);
-                            if (nm == "xmlns") {
-                                if (n[""] == undefined) {
-                                    n[""] = attr.value;
-                                }
-                            } else if (nm.length > 6 && nm.substring(0, 6) == "xmlns:") {
-                                var pre = nm.substring(6, nm.length);
-                                if (n[pre] == undefined) {
-                                    n[pre] = attr.value;
-                                }
+
+                            var pre = getPrefixForNamespaceNode(attr);
+
+                            if (pre != null && nodes[pre] == undefined) {
+                                nodes[pre] = new XPathNamespace(pre, attr, attr.value, xpc.contextNode);
                             }
                         }
                     }
-                    for (var pre in n) {
-                        var nsn = new XPathNamespace(pre, n[pre], xpc.contextNode);
-                        if (step.nodeTest.matches(nsn, xpc)) {
-                            newNodes.push(nsn);
+
+                    for (var pre in nodes) {
+                        var node = nodes[pre];
+
+                        if (step.nodeTest.matches(node, xpc)) {
+                            newNodes.push(node);
                         }
                     }
                 }
@@ -10291,10 +10360,11 @@ var xpath = ( false) ? 0 : exports;
     };
 
     function applyStepWithPredicates(step, xpc, node) {
-        return PathExpr.applyPredicates(
+        return applyPredicates(
             step.predicates,
             xpc,
-            PathExpr.applyStep(step, xpc, node)
+            PathExpr.applyStep(step, xpc, node),
+            includes(REVERSE_AXES, step.axis)
         );
     }
 
@@ -10331,7 +10401,12 @@ var xpath = ( false) ? 0 : exports;
         }
 
         return {
-            nodes: PathExpr.applyPredicates(this.filterPredicates || [], xpc, ns.toUnsortedArray())
+            nodes: applyPredicates(
+                this.filterPredicates || [],
+                xpc,
+                ns.toUnsortedArray(),
+                false // reverse
+            )
         };
     };
 
@@ -10511,6 +10586,14 @@ var xpath = ( false) ? 0 : exports;
         [Step.SELF, 'self']
     ]);
 
+    var REVERSE_AXES = [
+        Step.ANCESTOR,
+        Step.ANCESTORORSELF,
+        Step.PARENT,
+        Step.PRECEDING,
+        Step.PRECEDINGSIBLING
+    ];
+
     // NodeTest //////////////////////////////////////////////////////////////////
 
     NodeTest.prototype = new Object();
@@ -10618,7 +10701,7 @@ var xpath = ( false) ? 0 : exports;
                     [
                         NodeTypes.ELEMENT_NODE,
                         NodeTypes.ATTRIBUTE_NODE,
-                        XPathNamespace.XPATH_NAMESPACE_NODE,
+                        NodeTypes.NAMESPACE_NODE,
                     ]
                 )(n) &&
                     NodeTest.nameSpaceMatches(this.prefix, xpc, n) &&
@@ -10657,7 +10740,7 @@ var xpath = ( false) ? 0 : exports;
         [
             NodeTypes.ELEMENT_NODE,
             NodeTypes.ATTRIBUTE_NODE,
-            XPathNamespace.XPATH_NAMESPACE_NODE,
+            NodeTypes.NAMESPACE_NODE,
         ],
         '*'
     );
@@ -10680,8 +10763,8 @@ var xpath = ( false) ? 0 : exports;
         NodeTest.NODE,
         [
             NodeTypes.ELEMENT_NODE,
-            NodeTypes.ATTRIBUTE_NODE, 
-            NodeTypes.TEXT_NODE, 
+            NodeTypes.ATTRIBUTE_NODE,
+            NodeTypes.TEXT_NODE,
             NodeTypes.CDATA_SECTION_NODE,
             NodeTypes.PROCESSING_INSTRUCTION_NODE,
             NodeTypes.COMMENT_NODE,
@@ -11321,8 +11404,8 @@ var xpath = ( false) ? 0 : exports;
             n2Par = n2.parentNode || n2.ownerElement;
         }
 
-        var n1isAttr = Utilities.isAttribute(n1);
-        var n2isAttr = Utilities.isAttribute(n2);
+        var n1isAttr = isAttributeLike(n1);
+        var n2isAttr = isAttributeLike(n2);
 
         if (n1isAttr && !n2isAttr) {
             return -1;
@@ -11331,15 +11414,35 @@ var xpath = ( false) ? 0 : exports;
             return 1;
         }
 
+        // xml namespace node comes before others. namespace nodes before non-namespace nodes
+        if (n1.isXPathNamespace) {
+            if (n1.nodeValue === XPath.XML_NAMESPACE_URI) {
+                return -1;
+            }
+
+            if (!n2.isXPathNamespace) {
+                return -1;
+            }
+
+            if (n2.nodeValue === XPath.XML_NAMESPACE_URI) {
+                return 1;
+            }
+        } else if (n2.isXPathNamespace) {
+            return 1;
+        }
+
         if (n1Par) {
-            var cn = n1isAttr ? n1Par.attributes : n1Par.childNodes,
-                len = cn.length;
+            var cn = n1isAttr ? n1Par.attributes : n1Par.childNodes;
+            var len = cn.length;
+            var n1Compare = n1.baseNode || n1;
+            var n2Compare = n2.baseNode || n2;
+
             for (var i = 0; i < len; i += 1) {
                 var n = cn[i];
-                if (n === n1) {
+                if (n === n1Compare) {
                     return -1;
                 }
-                if (n === n2) {
+                if (n === n2Compare) {
                     return 1;
                 }
             }
@@ -11610,16 +11713,17 @@ var xpath = ( false) ? 0 : exports;
     XPathNamespace.prototype.constructor = XPathNamespace;
     XPathNamespace.superclass = Object.prototype;
 
-    function XPathNamespace(pre, ns, p) {
+    function XPathNamespace(pre, node, uri, p) {
         this.isXPathNamespace = true;
+        this.baseNode = node;
         this.ownerDocument = p.ownerDocument;
-        this.nodeName = "#namespace";
+        this.nodeName = pre;
         this.prefix = pre;
         this.localName = pre;
-        this.namespaceURI = ns;
-        this.nodeValue = ns;
+        this.namespaceURI = null;
+        this.nodeValue = uri;
         this.ownerElement = p;
-        this.nodeType = XPathNamespace.XPATH_NAMESPACE_NODE;
+        this.nodeType = NodeTypes.NAMESPACE_NODE;
     }
 
     XPathNamespace.prototype.toString = function () {
@@ -11841,6 +11945,7 @@ var xpath = ( false) ? 0 : exports;
     Functions.namespaceURI = function () {
         var c = arguments[0];
         var n;
+
         if (arguments.length == 1) {
             n = c.contextNode;
         } else if (arguments.length == 2) {
@@ -11848,10 +11953,11 @@ var xpath = ( false) ? 0 : exports;
         } else {
             throw new Error("Function namespace-uri expects (node-set?)");
         }
+
         if (n == null) {
             return new XString("");
         }
-        return new XString(n.namespaceURI);
+        return new XString(n.namespaceURI || '');
     };
 
     Functions.name = function () {
@@ -12134,8 +12240,13 @@ var xpath = ( false) ? 0 : exports;
 
     var Utilities = new Object();
 
-    Utilities.isAttribute = function (val) {
-        return val && (val.nodeType === NodeTypes.ATTRIBUTE_NODE || val.ownerElement);
+    // Returns true if the node is an attribute node or namespace node
+    var isAttributeLike = function (val) {
+        return val && (
+            val.nodeType === NodeTypes.ATTRIBUTE_NODE ||
+            val.ownerElement ||
+            val.isXPathNamespace
+        );
     }
 
     Utilities.splitQName = function (qn) {
@@ -12645,6 +12756,7 @@ var xpath = ( false) ? 0 : exports;
         this.context.caseInsensitive = XPathExpression.detectHtmlDom(n);
 
         var result = this.xpath.evaluate(this.context);
+
         return new XPathResult(result, t);
     }
 
@@ -13055,21 +13167,21 @@ var xpath = ( false) ? 0 : exports;
             DivOperation: DivOperation,
             ModOperation: ModOperation,
             UnaryMinusOperation: UnaryMinusOperation,
-          
+
             FunctionCall: FunctionCall,
             VariableReference: VariableReference,
-          
+
             XPathContext: XPathContext,
-          
+
             XNodeSet: XNodeSet,
             XBoolean: XBoolean,
             XString: XString,
             XNumber: XNumber,
-          
+
             NamespaceResolver: NamespaceResolver,
             FunctionResolver: FunctionResolver,
             VariableResolver: VariableResolver,
-          
+
             Utilities: Utilities,
         }
     );
@@ -13119,15 +13231,6 @@ var xpath = ( false) ? 0 : exports;
 
     exports.select1 = function (e, doc) {
         return exports.select(e, doc, true);
-    };
-
-    var isNodeLike = function (value) {
-        return value 
-            && typeof value.nodeType === "number" 
-            && Number.isInteger(value.nodeType)
-            && value.nodeType >= 1
-            && value.nodeType <= 11
-            && typeof value.nodeName === "string";
     };
 
     var isArrayOfNodes = function (value) {
@@ -13291,13 +13394,13 @@ module.exports = require("util");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-const core = __nccwpck_require__(798);
+const core = __nccwpck_require__(799);
 const fs = __nccwpck_require__(147);
 
 try {
   console.log('Welcome to Get-XML-Version.')
 
-  var argv = __nccwpck_require__(144)(process.argv.slice(2));
+  var argv = __nccwpck_require__(637)(process.argv.slice(2));
   var xmlFile = (typeof argv.f !== 'undefined') ? argv.f : process.env.GITHUB_WORKSPACE+'/'+core.getInput('xml-file', { required: true });
   var xpathToSearch = (typeof argv.p !== 'undefined') ? argv.p : core.getInput('xpath', { required: true });
   var debug = (typeof argv.d !== 'undefined') ? true : false;
@@ -13311,7 +13414,7 @@ try {
 
   console.log(`Namespaces: ${namespaces}`)
 
-  var xpath = __nccwpck_require__(392), dom = (__nccwpck_require__(419).DOMParser)
+  var xpath = __nccwpck_require__(654), dom = (__nccwpck_require__(909).DOMParser)
 
 
 
