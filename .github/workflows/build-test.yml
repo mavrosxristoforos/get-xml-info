@@ -26,7 +26,7 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: npm i -g @vercel/ncc
-      - run: npm ncc build index.js --license licenses.txt
+      - run: ncc build index.js --license licenses.txt
       - run: npm test
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
