@@ -13,7 +13,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  test:
+  test-win-mac:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -36,7 +36,7 @@ jobs:
       - name: Build new release
         run: ncc build index.js --license licenses.txt
 
-  build:
+  test-and-build-ubuntu:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
