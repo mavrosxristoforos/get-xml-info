@@ -13,7 +13,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  build:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -26,6 +26,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
+          cache: 'npm'
+
+      - name: Install dependencies with NPM
+        run: |
+          npm i -g @vercel/ncc
+          npm install
+
+      - name: Build new release
+        run: ncc build index.js --license licenses.txt
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
           cache: 'npm'
 
       - name: Install dependencies with NPM
