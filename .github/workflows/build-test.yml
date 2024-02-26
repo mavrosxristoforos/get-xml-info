@@ -1,4 +1,4 @@
-name: Build & Test
+name: Build Test
 
 on:
   pull_request:
@@ -8,10 +8,6 @@ on:
     paths-ignore:
       - "**.md"
   workflow_dispatch:
-
-permissions:
-  contents: write
-  pull-requests: write
 
 jobs:
   build:
@@ -36,10 +32,3 @@ jobs:
 
       - name: Build new release
         run: ncc build index.js --license licenses.txt
-
-      - name: Open pull request with changes
-        uses: peter-evans/create-pull-request@v6
-        with:
-          title: New build
-          branch: auto-build
-          delete-branch: true
