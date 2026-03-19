@@ -29,7 +29,7 @@ try {
     else {
       console.log('File was read successfully. Proceeding to parse DOM.');
 
-      var doc = new dom().parseFromString(data);
+      var doc = new dom().parseFromString(data, 'text/xml');
       if (debug) {
         console.log('Debug output: Document.');
         console.log(doc);
