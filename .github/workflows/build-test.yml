@@ -31,7 +31,7 @@ jobs:
           npm install
 
       - name: Build new release
-        run: ncc build index.js --license licenses.txt
+        run: ncc build index.mjs --license licenses.txt
 
   self-test:
     runs-on: ubuntu-latest
