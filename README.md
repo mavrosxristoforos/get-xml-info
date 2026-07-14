@@ -21,7 +21,7 @@
 
 ## Example usage
 
-    uses: mavrosxristoforos/get-xml-info@2.2
+    uses: mavrosxristoforos/get-xml-info@2.2.0
       with:
         xml-file: 'yourfile.xml'
         xpath: '//element'
@@ -72,7 +72,7 @@ If `zero-nodes-action='warn'` and no nodes are found, `info` will contain the me
         uses: actions/checkout@v1
         - name: Get XML
           id: getxml
-          uses: mavrosxristoforos/get-xml-info@2.2
+          uses: mavrosxristoforos/get-xml-info@2.2.0
           with:
             xml-file: 'a-file-here.xml'
             xpath: '//version'
