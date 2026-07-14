@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node: ["20"]
+        node: ["24"]
     steps:
       - uses: actions/checkout@v6
 
@@ -32,3 +32,20 @@ jobs:
 
       - name: Build new release
         run: ncc build index.js --license licenses.txt
+
+  self-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run the action against test.xml
+        id: getxml
+        uses: ./
+        with:
+          xml-file: 'test.xml'
+          xpath: '//version'
+      - name: Assert output
+        run: |
+          if [ "${{ steps.getxml.outputs.info }}" != "1.0.20" ]; then
+            echo "Expected 1.0.20, got: ${{ steps.getxml.outputs.info }}"
+            exit 1
+          fi
