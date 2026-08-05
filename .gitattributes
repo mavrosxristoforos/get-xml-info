@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Keep the BOM test fixture byte-exact
+test-bom.xml -text

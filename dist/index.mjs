@@ -44928,6 +44928,13 @@ try {
     else {
       console.log('File was read successfully. Proceeding to parse DOM.');
 
+      // Strip a leading UTF-8 BOM (U+FEFF), which xmldom rejects as
+      // "Unexpected content outside root element". See issue #50.
+      if (data.charCodeAt(0) === 0xFEFF) {
+        console.log('Byte Order Mark detected and removed.');
+        data = data.slice(1);
+      }
+
       var doc = new lib/* DOMParser */.S4().parseFromString(data, 'text/xml');
       if (index_debug) {
         console.log('Debug output: Document.');

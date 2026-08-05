@@ -49,3 +49,16 @@ jobs:
             echo "Expected 1.0.20, got: ${{ steps.getxml.outputs.info }}"
             exit 1
           fi
+
+      - name: Run the action against test-bom.xml (UTF-8 with BOM)
+        id: getxmlbom
+        uses: ./
+        with:
+          xml-file: 'test-bom.xml'
+          xpath: '//version'
+      - name: Assert BOM output
+        run: |
+          if [ "${{ steps.getxmlbom.outputs.info }}" != "1.0.20" ]; then
+            echo "Expected 1.0.20, got: ${{ steps.getxmlbom.outputs.info }}"
+            exit 1
+          fi
