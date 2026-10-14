@@ -13,7 +13,7 @@
     "@actions/core": "^3.0.1",
     "@xmldom/xmldom": "^0.9.12",
     "minimist": "^1.2.8",
-    "xpath": "^0.0.34"
+    "xpath": "^0.0.35"
   },
   "repository": {
     "type": "git",
